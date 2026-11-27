@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Duel Zone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><span class="eyebrow">LOCAL PVP</span><h1>DUEL ZONE</h1></div>
+      <button id="soundBtn" aria-label="Toggle sound">SOUND ON</button>
+    </header>
+
+    <section class="topbar">
+      <div class="score"><span class="p1dot"></span><strong>BLUE</strong><b id="p1Score">0</b></div>
+      <div class="match-info">
+        <span id="mapName">NEON GRID</span>
+        <strong id="timer">60</strong>
+      </div>
+      <div class="score right"><b id="p2Score">0</b><strong>RED</strong><span class="p2dot"></span></div>
+    </section>
+
+    <canvas id="game" width="960" height="540" aria-label="Duel Zone game arena"></canvas>
+
+    <section id="menu" class="overlay">
+      <div class="panel">
+        <span class="eyebrow">ROUND SETUP</span>
+        <h2>CHOOSE YOUR MAP</h2>
+        <div id="mapCards" class="cards"></div>
+        <button id="startBtn" class="primary">START DUEL</button>
+        <div class="controls">
+          <span><b>BLUE</b> WASD · Q to shoot · E dash</span>
+          <span><b>RED</b> ARROWS · / to shoot · . dash</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="endScreen" class="overlay hidden">
+      <div class="panel">
+        <span class="eyebrow">MATCH COMPLETE</span>
+        <h2 id="winner">BLUE WINS</h2>
+        <button id="againBtn" class="primary">PLAY AGAIN</button>
+        <button id="menuBtn" class="secondary">CHANGE MAP</button>
+      </div>
+    </section>
+
+    <aside class="leaderboard">
+      <h3>LEADERBOARD</h3>
+      <ol id="leaderboard"></ol>
+    </aside>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
